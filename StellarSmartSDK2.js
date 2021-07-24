@@ -33,7 +33,7 @@ class StellarSmartSDK2 {
             this.nXLMUSD = 0
             this.sSenderAddress = await GetRabetSenderAddress()
             await this.GetMessages()
-            this.sSender_PrivateKey = ""
+            this.sSenderAddress_Secret = ""
             return this;
         })();
     }
