@@ -34,7 +34,7 @@ The constructor requires the following three paramegters:
 Each **Message Receiver Account** may store multiple "***databases***", as messages will only be read and written for the selected **Asset Code**.
 3. **bIsTestnet:** If set to **true**, the **Test Network** will be used. If set to **false**, the **Main Network** will be used. 
 
-### GetMessages() function
+### **GetMessages()** function
 
 When the constructor is called, the SDK calls its **GetMessages()** function, which retrieves all the **Payments** from the selected Stellar account.
 
