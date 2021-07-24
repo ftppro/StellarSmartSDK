@@ -18,19 +18,35 @@ The **transaction fee** to send text on the **Main Network** is only **$0.000000
 The **Message Sender Account** must contain at least **1.51 XLM**, which is the 1.5 XLM minimum balance, plus .01 XLM as the transaction fee to send some messages.
 
 There are two ways to select a Stellar account that messages will be sent ***from***:
-1. **Private Key:** This SDK includes a property named <b>sSenderAddress_Secret</b>, which your code must set if the **Rabet Chrome Extension** is not used.
+1. **Private Key:** This SDK includes a property named <b>sSenderAddress_Secret</b>, which your code must set if the **Rabet Chrome Extension** is not used. This is described more completely below.
 2. [**Rabet Chrome Extension**](https://chrome.google.com/webstore/detail/rabet/hgmoaheomcjnaheggkfafnjilfcefbmo): This **Chrome Extension** lets you select a Stellar Account without disclosing your **Private Key**. When you call the SDK's **SendMessage** function, you will be prompted to **sign** the transaction on the **Rabet popup**.
 
 ### SDK Constructor
 **constructor(sReceiverAddress, sAssetCode, bIsTestnet)**:<br> 
 
 Call this function to create a Smart SDK object.<br>
-*For example:* **var gobjSDK = await new StellarSmartSDK('GDEWWXY4Q5454HYN6FLLV3G44EAX7AB5HIPFTUMBOW', true)**
+*For example:* **var gobjSDK = await new StellarSmartSDK2('GDEWWXY4Q5454HYN6FLLV3G44EAX7AB5HIPFTUMBOW', "MyToken", true)**
 
-The **Message Receiver Account** is set when you call the SDK's **constructor** (this is described below). Any Stellar account with at least **1 XLM** can be used as a **Message Receiver Account**.
+The constructor requires the following three paramegters:
 
-The constructor is also used to set the **Asset Code**, which is a string with no more than 12 alphabetical characters. 
-Your **Message Receiver Account** may store multiple "***databases***", as messages will only be read and written for the selected **Asset Code**.
+1. **sReceiverAddress:** Any Stellar account with at least **1 XLM** can be used as a **Message Receiver Account**.
+2. **sAssetCode:**: The **Asset Code**  is a string with no more than 12 alphabetical characters, which indicates the Token that will be used to create the **Micro-payments**.
+Each **Message Receiver Account** may store multiple "***databases***", as messages will only be read and written for the selected **Asset Code**.
+3. **bIsTestnet:** If set to **true**, the **Test Network** will be used. If set to **false**, the **Main Network** will be used. 
+
+### **GetMessages()** function
+
+When the constructor is called, the SDK calls its **GetMessages()** function, which retrieves all the **Payments** from the selected Stellar account.
+
+The **GetMessages()** function then parses the Payment data into **Messages**, which are placed into an object array named **objMessages** which contains the following fields:
+  * **from**: The Stellar address that sent the message.
+  * **message**: The message that was sent.
+  * **timestamp**: The numeric epoch timestamp.
+  
+Therefore, by just creating a Smart SDK object named **gobjSDK**, you will have an object named **gobjSDK.objMessages** which 
+contains all the messages that had been sent to the selected Stellar address.
+
+
 
 
 ### Send Message
