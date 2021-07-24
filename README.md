@@ -66,7 +66,7 @@ so the maximum length for a **Blog Entry** or **Blog Comment** is 618 characters
 The **Stellar Smart SDK** uses ***Micro-payments*** to send up to 638 text characters in each transaction.
 
 Each Stellar transaction may contain up to 100 **Operations**, and each **Operation** may contain a **Payment**. 
-This SDK combines**16 digits** from each Payment **Amount**, to create a **Long Number** that can represent **text**.
+This SDK combines **16 digits** from each Payment **Amount**, to create a **Long Number** that can represent **text**.
 
 For example, the string "**abc**" can be converted to the following ***bytes32/hex***: **0x616263**<br>
 (You can confirm this at https://web3-type-converter.onbrn.com)
