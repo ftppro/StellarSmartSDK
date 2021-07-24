@@ -27,7 +27,7 @@ There are two ways to select a Stellar account that messages will be sent ***fro
 Call this function to create a Smart SDK object.<br>
 *For example:* **var gobjSDK = await new StellarSmartSDK2('GDEWWXY4Q5454HYN6FLLV3G44EAX7AB5HIPFTUMBOW', "MyToken", true)**
 
-The constructor requires the following three paramegters:
+The constructor requires the following three parameters:
 
 1. **sReceiverAddress:** Any Stellar account with at least **1 XLM** can be used as a **Message Receiver Account**.
 2. **sAssetCode:**: The **Asset Code**  is a string with no more than 12 alphabetical characters, which indicates the Token that will be used to create the **Micro-payments**.
