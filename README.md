@@ -34,7 +34,7 @@ The constructor requires the following three paramegters:
 Each **Message Receiver Account** may store multiple "***databases***", as messages will only be read and written for the selected **Asset Code**.
 3. **bIsTestnet:** If set to **true**, the **Test Network** will be used. If set to **false**, the **Main Network** will be used. 
 
-### **GetMessages()** function
+### GetMessages() function
 
 When the constructor is called, the SDK calls its **GetMessages()** function, which retrieves all the **Payments** from the selected Stellar account.
 
@@ -45,6 +45,20 @@ The **GetMessages()** function then parses the Payment data into **Messages**, w
   
 Therefore, by just creating a Smart SDK object named **gobjSDK**, you will have an object named **gobjSDK.objMessages** which 
 contains all the messages that had been sent to the selected Stellar address.
+
+### sSender_PrivateKey property
+If the **Rabet Chrome Extension** is ***not*** being used, then you must set this ***property*** with the **Private Key** of the **Message Sender Account**,
+before sending a message.<br>
+*For example:* **gobjSDK.objMessages.sSender_PrivateKey = 'SBKRL3MNTPWIOUIBTN55FDOD3JGYTR99QHIQDRFBIJY'**
+
+### SendMessage(sMessage) function:
+*For example:* **gobjSDK.SendMessage("This is a test")**<br>
+This function will send a message from the selected **Message Sender Account**, 
+to the **Message Receiver Account** that was set in the constructor.
+If the **Rabet Chrome Extension** is being used, then the SDK will prompt the user to sign the transaction on the **Rabet** popup.
+If the **Rabet Chrome Extension** is ***not*** being used, then the SDK will use the **sSender_PrivateKey** property to sign the transaction.
+
+
 
 
 
