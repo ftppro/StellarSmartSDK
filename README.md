@@ -18,18 +18,20 @@ The **transaction fee** to send text on the **Main Network** is only **$0.000000
 The **Message Sender Account** must contain at least **1.51 XLM**, which is the 1.5 XLM minimum balance, plus .01 XLM as the transaction fee to send some messages.
 
 There are two ways to select a Stellar account that messages will be sent ***from***:
-1. **Private Key:** The SDK includes a property named <b>sSenderAddress_Secret</b>, which your code must set if the **Rabet Chrome Extension** is not used
-2. 
-3. [**Rabet Chrome Extension**](https://chrome.google.com/webstore/detail/rabet/hgmoaheomcjnaheggkfafnjilfcefbmo): This **Chrome Extension** lets you select a Stellar Account without disclosing your **Private Key**. When you click **[Send Message]**, you will be prompted to **sign** the transaction on the **Rabet popup**.
+1. **Private Key:** This SDK includes a property named <b>sSenderAddress_Secret</b>, which your code must set if the **Rabet Chrome Extension** is not used.
+2. [**Rabet Chrome Extension**](https://chrome.google.com/webstore/detail/rabet/hgmoaheomcjnaheggkfafnjilfcefbmo): This **Chrome Extension** lets you select a Stellar Account without disclosing your **Private Key**. When you call the SDK's **SendMessage** function, you will be prompted to **sign** the transaction on the **Rabet popup**.
 
-### Message Receiver Account
-The ***default*** **Message Receiver Account** is initially active when this website is opened. This account contains sample messages for the **Main Network** and **Test Network**.
+### SDK Constructor
+**constructor(sReceiverAddress, sAssetCode, bIsTestnet)**:<br> 
 
-You can enter any valid Stellar address in the **Message Receiver Account** textbox, and click **[Change Message Receiver Account]**. You should only use a ***new*** Stellar account, with a starting balance of just **1 XLM**.
+Call this function to create a Smart SDK object.<br>
+*For example:* **var gobjSDK = await new StellarSmartSDK('GDEWWXY4Q5454HYN6FLLV3G44EAX7AB5HIPFTUMBOW', true)**
 
-You may also include the **Receiver Account Address** in the URL which displays this website. Just add "**?id=**", followed by a valid Stellar Address.
-To have the **Test Network** used, add "**&t=1**" at the end of the URL.<br>
-*For example:* https://ftppro.github.io/StellarMessenger?id=GBDFCHPU4EWWS3UALFCIDWYMR6V4ENMOXR3KJDHK7W5BEQHD5QQA7X56&t=1
+The **Message Receiver Account** is set when you call the SDK's **constructor** (this is described below). Any Stellar account with at least **1 XLM** can be used as a **Message Receiver Account**.
+
+The constructor is also used to set the **Asset Code**, which is a string with no more than 12 alphabetical characters. 
+Your **Message Receiver Account** may store multiple "***databases***", as messages will only be read and written for the selected **Asset Code**.
+
 
 ### Send Message
 After you have selected a **Message Sender Account** (by entering a **Private Key**, or by using the **Rabet Chrome Extension**), you may enter a **Message** that contains up to 164 characters. As you are typing, the display will show the **Transaction Cost**, how much will be received by the **Recipient**, and the **Transaction Fee**.
