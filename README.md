@@ -53,6 +53,7 @@ before sending a message.<br>
 
 ### SendMessage(sMessage) function:
 *For example:* **gobjSDK.SendMessage("This is a test")**<br>
+
 This function will send a message from the selected **Message Sender Account**, to the **Message Receiver Account** that was set in the constructor.
 If the **Rabet Chrome Extension** is being used, then the SDK will prompt the user to sign the transaction on the **Rabet** popup.
 If the **Rabet Chrome Extension** is ***not*** being used, then the SDK will use the **sSender_PrivateKey** property to sign the transaction.
