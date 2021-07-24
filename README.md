@@ -5,7 +5,7 @@ To demonstrate the **Stellar Smart SDK**, take a look at the [**Stellar Blogger*
 
 The **Stellar Smart SDK** lets you send **638 text characters** in one Stellar transaction, for just **.001 XLM** (about **$0.00025**). You can use this capability to create **Shopping Carts**, **Tweets**, and **Discussion Forums** on the Stellar blockchain.
 
-Previously, the **Memo** field was the only way to include text with your payment. The Memo field only allows 32 characters per transaction, so it would take 20 transactions to send 638 characters. It takes 6 seconds to send each transaction to the Stellar blockchain, so it would take **120 seconds** to do what the **Stellar Smart SDK** does in just **1 second**. This SDK uses **micro-payments** to send text (this is described below).
+Previously, the **Memo** field was the only way to include text with your payment. The Memo field only allows 32 characters per transaction, so it would take 20 transactions to send 638 characters. It takes 6 seconds to send each transaction to the Stellar blockchain, so it would take **120 seconds** to do what the **Stellar Smart SDK** does in just **6 seconds**. This SDK uses **micro-payments** to send text (this is described below).
 
 ### Use on Test Network or Main Network
 This SDK lets you use the **Test Network**, which is free to use. However, the **Test Network** can be ten times slower than the **Main Network**, because it often requires multiple **retries** to send a transaction. When using the **Main Network**. I have not encountered ***any*** retries. 
