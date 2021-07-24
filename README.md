@@ -83,4 +83,3 @@ Therefore, the string "**abc**" can be stored on the Stellar network as these tw
 * .0000179
 * 
 This SDK does not use the **Memo** field to store additional text, because it is **five times slower** to retrieve records from the **Horizon API** when "***&join=transactions***" is added to the URL that retrieves **Operations**.
-
