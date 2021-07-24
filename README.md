@@ -15,7 +15,7 @@ This SDK allows up to 20 retries for a transaction to be sent. On the **Test Net
 The **transaction fee** to send text on the **Main Network** is only **$0.0000004 per character**, so you can send **32k of text** (100 Blog Entries with 320 characters in each) for a total fee of just **1 cent**.
 
 ### Message Sender Account
-The **Message Sender Account** must contain at least **1.51 XLM**, which is the 1.5 XLM minimum balance, plus .01 XLM as the transaction fee to send some messages.
+The **Message Sender Account** must contain at least **1.51 XLM**, which is the 1.5 XLM minimum balance, plus .01 XLM as the transaction fee to send messages.
 
 There are two ways to select a Stellar account that messages will be sent ***from***:
 1. **Private Key:** This SDK includes a property named <b>sSenderAddress_Secret</b>, which your code must set if the **Rabet Chrome Extension** is not used. This is described  below.
