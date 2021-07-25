@@ -44,7 +44,7 @@ class StellarSmartSDK2 {
         var arrExtraPayments = []
         var objTotalPayments_BigNumber = new Big(0)
 
-        sMessage = sMessage.replaceAll('^', '~').replaceAll('"', '^').substr(0, 638)
+        sMessage = sMessage.replaceAll('^', '~').replaceAll('"', '^').replace(/[^\x20-\x7F]/g, " ").substr(0, 638)
 
         this.sSenderAddress = await GetRabetSenderAddress()
         if (!window.rabet) {
