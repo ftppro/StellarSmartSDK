@@ -1,7 +1,7 @@
 # Stellar Smart SDK
 
 ### Overview
-To demonstrate the **Stellar Smart SDK**, take a look at the [**Stellar Blogger**](https://www.tokenup.app/StellarBlogger.php).
+To demonstrate the **Stellar Smart SDK**, take a look at the [**Stellar Blogger**](https://www.tokenup.app/StellarBlogger.php), and the [**Stellar Data SDK**](https://www.tokenup.app/StellarDataSDK_Example.php).
 
 The **Stellar Smart SDK** lets you send **638 text characters** in one Stellar transaction, for just **.001 XLM** (about **$0.00025**). You can use this capability to create **Shopping Carts**, **Tweets**, and **Discussion Forums** on the Stellar blockchain.
 
